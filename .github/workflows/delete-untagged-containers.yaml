@@ -1,0 +1,20 @@
+name: delete-untagged-containers
+
+on:
+  workflow_dispatch:
+
+permissions:
+  packages: write
+
+jobs:
+  delete-untagged-containers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "PACKAGE_NAME=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
+
+      - uses: Chizkiyahu/delete-untagged-ghcr-action@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          package_name: ${{ env.PACKAGE_NAME }}
+          owner_type: user

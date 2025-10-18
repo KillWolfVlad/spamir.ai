@@ -1,0 +1,56 @@
+name: deploy-image
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["master"]
+
+permissions:
+  packages: write
+
+jobs:
+  deploy-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-qemu-action@v3
+
+      - uses: docker/setup-buildx-action@v3
+
+      - run: echo "IMAGE_NAME=ghcr.io/$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]' | tr -d '.')-api" >> "$GITHUB_ENV"
+
+      - run: echo "IMAGE_TAG_HASH=$(echo ${{ github.ref_name }} | tr / -)-${{ github.run_number }}-$(echo ${{ github.sha }} | cut -c 1-6)" >> "$GITHUB_ENV"
+
+      - run: echo "BASE_IMAGE_TAG=$IMAGE_NAME:base-$IMAGE_TAG_HASH" >> "$GITHUB_ENV"
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./docker/base/Dockerfile
+          push: true
+          platforms: linux/amd64,linux/arm64/v8
+          tags: ${{ env.BASE_IMAGE_TAG }}
+
+      - run: echo "IMAGE_TAGS=$IMAGE_NAME:${{ vars.TEXT_MODEL_VERSION }}-$IMAGE_TAG_HASH" >> "$GITHUB_ENV"
+
+      - if: github.ref == 'refs/heads/master'
+        run: echo "IMAGE_TAGS=$IMAGE_NAME:latest,$IMAGE_TAGS" >> "$GITHUB_ENV"
+
+      - uses: docker/build-push-action@v6
+        with:
+          build-args: |
+            BASE_IMAGE=${{ env.BASE_IMAGE_TAG }}
+            TEXT_MODEL=KillWolfVlad/spamir.ai-model-${{ vars.TEXT_MODEL_VERSION }}
+          context: .
+          file: ./docker/models/Dockerfile
+          push: true
+          platforms: linux/amd64,linux/arm64/v8
+          tags: ${{ env.IMAGE_TAGS }}
