@@ -1,0 +1,47 @@
+[project]
+name = "spamirai"
+version = "0.0.0"
+description = "AI-Powered spam detection service"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+spamirai-api = { workspace = true }
+spamirai-data-preprocessing = { workspace = true }
+spamirai-dataset-cas = { workspace = true }
+spamirai-dataset-common = { workspace = true }
+spamirai-dataset-huggingface = { workspace = true }
+spamirai-dataset-lols = { workspace = true }
+spamirai-dataset-split = { workspace = true }
+spamirai-dataset-stats = { workspace = true }
+spamirai-dataset-telegram = { workspace = true }
+spamirai-dataset-telegram-bot = { workspace = true }
+spamirai-dataset-telegram-common = { workspace = true }
+spamirai-dataset-validate = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "pytest==8.4.2",
+    "ruff==0.14.0",
+    # These are added as dev dependencies becuase they should be available
+    # when developing the project.
+    "spamirai-api",
+    "spamirai-data-preprocessing",
+    "spamirai-dataset-cas",
+    "spamirai-dataset-common",
+    "spamirai-dataset-huggingface",
+    "spamirai-dataset-lols",
+    "spamirai-dataset-split",
+    "spamirai-dataset-stats",
+    "spamirai-dataset-telegram",
+    "spamirai-dataset-telegram-bot",
+    "spamirai-dataset-telegram-common",
+    "spamirai-dataset-validate",
+]
+
+[tool.uv]
+package = false

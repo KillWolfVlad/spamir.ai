@@ -1,0 +1,14 @@
+[project]
+name = "spamirai-dataset-lols"
+version = "0.0.0"
+description = "AI-Powered spam detection service - Lols Dataset Importer"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4==4.13.5",
+    "requests-sse==0.5.2",
+    "spamirai-dataset-common",
+]
+
+[tool.uv]
+package = false

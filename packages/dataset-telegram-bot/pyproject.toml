@@ -1,0 +1,14 @@
+[project]
+name = "spamirai-dataset-telegram-bot"
+version = "0.0.0"
+description = "AI-Powered spam detection service - Telegram Bot Dataset Importer"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv==1.1.1",
+    "python-telegram-bot==22.4",
+    "spamirai-dataset-common",
+]
+
+[tool.uv]
+package = false

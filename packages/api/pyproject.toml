@@ -1,0 +1,28 @@
+[project]
+name = "spamirai-api"
+version = "0.0.0"
+description = "AI-Powered spam detection service - API"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi-healthchecks==1.1.0",
+    "fastapi[standard]==0.116.2",
+    "prometheus-fastapi-instrumentator==7.1.0",
+    "pydantic==2.11.9",
+    "python-dotenv==1.1.1",
+    "transformers[torch]==4.56.2",
+    "spamirai-data-preprocessing",
+]
+
+[project.scripts]
+spamirai-api = "spamirai_api_cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/spamirai_api",
+    "src/spamirai_api_cli",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

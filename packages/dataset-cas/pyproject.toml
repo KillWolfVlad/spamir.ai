@@ -1,0 +1,15 @@
+[project]
+name = "spamirai-dataset-cas"
+version = "0.0.0"
+description = "AI-Powered spam detection service - Combot Dataset Importer"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv==1.1.1",
+    "request-boost==0.8",
+    "spamirai-dataset-common",
+    "spamirai-dataset-telegram-common",
+]
+
+[tool.uv]
+package = false

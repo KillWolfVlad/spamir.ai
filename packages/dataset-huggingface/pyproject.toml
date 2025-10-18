@@ -1,0 +1,13 @@
+[project]
+name = "spamirai-dataset-huggingface"
+version = "0.0.0"
+description = "AI-Powered spam detection service - Hugging Face Dataset Importer"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "datasets==4.1.1",
+    "spamirai-dataset-common",
+]
+
+[tool.uv]
+package = false
