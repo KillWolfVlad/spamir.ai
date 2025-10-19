@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "PACKAGE_NAME=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_ENV"
+      - run: echo "PACKAGE_NAME=$(echo ${{ github.event.repository.name }} | tr '[:upper:]' '[:lower:]' | tr -d '.')-api" >> "$GITHUB_ENV"
 
       - uses: Chizkiyahu/delete-untagged-ghcr-action@v6
         with:
