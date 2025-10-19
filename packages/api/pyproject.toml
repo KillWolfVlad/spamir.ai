@@ -10,9 +10,20 @@ dependencies = [
     "prometheus-fastapi-instrumentator==7.1.0",
     "pydantic==2.11.9",
     "python-dotenv==1.1.1",
-    "transformers[torch]==4.56.2",
+    "transformers==4.57.1",
+    "torch==2.9.0",
     "spamirai-data-preprocessing",
 ]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
 
 [project.scripts]
 spamirai-api = "spamirai_api_cli:main"
