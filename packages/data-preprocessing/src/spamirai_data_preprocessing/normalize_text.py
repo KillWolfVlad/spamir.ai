@@ -46,6 +46,10 @@ def _replace_mentions(text: str) -> str:
     return re.sub(r"@[a-z0-9_]{5,32}", "[MENTION]", text)
 
 
+def _replace_phones(text: str) -> str:
+    return re.sub(r"\+\d{11}", "[PHONE]", text)
+
+
 def _trim(text: str) -> str:
     return text.strip()
 
@@ -61,6 +65,7 @@ _normalize_text_middlewares = [
     _remove_extra_unicode_chars,
     _replace_urls,
     _replace_mentions,
+    _replace_phones,
     _trim,
     _remove_extra_spaces,
 ]
