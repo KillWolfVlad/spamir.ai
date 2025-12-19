@@ -4,12 +4,12 @@ from src import BaseHuggingFaceImporter
 
 class Importer(BaseHuggingFaceImporter):
     """
-    https://huggingface.co/datasets/alt-gnome/telegram-spam
+    https://huggingface.co/alt-gnome/datasets
     """
 
-    def __init__(self):
+    def __init__(self, hf_dataset_path: str):
         super().__init__(
-            "alt-gnome/telegram-spam",
+            hf_dataset_path,
             "300_huggingface_alt_gnome_telegram_spam",
         )
 
@@ -25,7 +25,8 @@ class Importer(BaseHuggingFaceImporter):
 
 
 def main():
-    Importer().run()
+    Importer("alt-gnome/telegram-spam").run()
+    Importer("alt-gnome/telegram-spam-20251030").run()
 
 
 if __name__ == "__main__":
