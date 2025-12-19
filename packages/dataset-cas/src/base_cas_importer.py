@@ -24,7 +24,8 @@ class BaseCasImporter(BaseImporter, ABC):
                 if user_id not in user_ids_cache:
                     buffered_user_ids.append(user_id)
 
-                continue
+                if len(buffered_user_ids) < buffer_size:
+                    continue
 
             for result in check_users(buffered_user_ids):
                 yield result
