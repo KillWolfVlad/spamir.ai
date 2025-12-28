@@ -21,7 +21,6 @@ def main():
     models = os.getenv("MODELS").split(",")
 
     for model in models:
-        print(model)
         Validator(model).run()
 
 

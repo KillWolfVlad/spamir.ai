@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 import pandas as pd
 from spamirai_dataset_common import dataset_paths, mkdirp
 
+from .report_paths import report_paths
+
 
 class BaseValidator(ABC):
     def __init__(self, model: str):
@@ -13,16 +15,13 @@ class BaseValidator(ABC):
         pass
 
     def run(self):
-        reports_dir = dataset_paths.dataset_dir / "reports"
-        mkdirp(reports_dir)
+        print(self._model)
 
-        gitignore_path = reports_dir / ".gitignore"
+        report_path = report_paths.get_report_path(self._model)
 
-        if not gitignore_path.exists():
-            with open(gitignore_path, "w") as f:
-                f.write("*\n")
-
-        report_path = reports_dir / f"{self._model.replace('/', '_')}_report.csv"
+        if report_path.exists():
+            print("already exists!")
+            return
 
         df = pd.read_csv(dataset_paths.validation_dataset_path)
         results = []
