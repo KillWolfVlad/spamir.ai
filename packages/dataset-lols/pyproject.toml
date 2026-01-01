@@ -5,7 +5,7 @@ description = "AI-Powered spam detection service - Lols Dataset Importer"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "beautifulsoup4==4.13.5",
+    "beautifulsoup4==4.14.3",
     "requests-sse==0.5.2",
     "spamirai-dataset-common",
 ]
