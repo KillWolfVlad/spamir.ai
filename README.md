@@ -15,6 +15,10 @@ AI-Powered spam detection service :zap:
 
 See [spamir.ai collection](https://huggingface.co/collections/KillWolfVlad/spamirai-68b349b23fa0be2045096b40) on Hugging Face.
 
+## Train
+
+<https://github.com/KillWolfVlad/spamir.ai-train>
+
 ## Usage
 
 ```bash
