@@ -732,15 +732,15 @@ wheels = [
 
 [[package]]
 name = "pandas-stubs"
-version = "2.3.2.250827"
+version = "2.3.3.260113"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
     { name = "types-pytz" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/03/7b/8d2076a76ddf35806319798037056e4bbdcacdc832fb7c95b517f4c03fb2/pandas_stubs-2.3.2.250827.tar.gz", hash = "sha256:bcc2d49a2766325e4a1a492c3eeda879e9521bb5e26e69e2bbf13e80e7ef569a", size = 100032, upload-time = "2025-08-27T23:18:12.802Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/92/5d/be23854a73fda69f1dbdda7bc10fbd6f930bd1fa87aaec389f00c901c1e8/pandas_stubs-2.3.3.260113.tar.gz", hash = "sha256:076e3724bcaa73de78932b012ec64b3010463d377fa63116f4e6850643d93800", size = 116131, upload-time = "2026-01-13T22:30:16.704Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a1/b8/dc820157be5aa9527f1f7ffe81737ee4d1cf0924081e1bfbd680530dde41/pandas_stubs-2.3.2.250827-py3-none-any.whl", hash = "sha256:3d613013b4189147a9a6bb18d8bec1e5b137de091496e9b9ff9f137ec3e223a9", size = 157775, upload-time = "2025-08-27T23:18:11.083Z" },
+    { url = "https://files.pythonhosted.org/packages/d1/c6/df1fe324248424f77b89371116dab5243db7f052c32cc9fe7442ad9c5f75/pandas_stubs-2.3.3.260113-py3-none-any.whl", hash = "sha256:ec070b5c576e1badf12544ae50385872f0631fc35d99d00dc598c2954ec564d3", size = 168246, upload-time = "2026-01-13T22:30:15.244Z" },
 ]
 
 [[package]]
@@ -1347,7 +1347,7 @@ requires-dist = [{ name = "emoji", specifier = "==2.15.0" }]
 [package.metadata.requires-dev]
 dev = [
     { name = "pandas", specifier = "==2.3.2" },
-    { name = "pandas-stubs", specifier = "==2.3.2.250827" },
+    { name = "pandas-stubs", specifier = "==2.3.3.260113" },
     { name = "pytest", specifier = "==8.4.2" },
     { name = "spamirai-dataset-common", editable = "packages/dataset-common" },
 ]
@@ -1385,7 +1385,7 @@ dependencies = [
 requires-dist = [
     { name = "natsort", specifier = "==8.4.0" },
     { name = "pandas", specifier = "==2.3.2" },
-    { name = "pandas-stubs", specifier = "==2.3.2.250827" },
+    { name = "pandas-stubs", specifier = "==2.3.3.260113" },
 ]
 
 [[package]]
@@ -1435,7 +1435,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "pandas", specifier = "==2.3.2" },
-    { name = "pandas-stubs", specifier = "==2.3.2.250827" },
+    { name = "pandas-stubs", specifier = "==2.3.3.260113" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "spamirai-data-preprocessing", editable = "packages/data-preprocessing" },
     { name = "spamirai-dataset-common", editable = "packages/dataset-common" },
@@ -1454,7 +1454,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "pandas", specifier = "==2.3.2" },
-    { name = "pandas-stubs", specifier = "==2.3.2.250827" },
+    { name = "pandas-stubs", specifier = "==2.3.3.260113" },
     { name = "spamirai-dataset-common", editable = "packages/dataset-common" },
 ]
 
@@ -1473,7 +1473,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "pandas", specifier = "==2.3.2" },
-    { name = "pandas-stubs", specifier = "==2.3.2.250827" },
+    { name = "pandas-stubs", specifier = "==2.3.3.260113" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "spamirai-dataset-common", editable = "packages/dataset-common" },
     { name = "spamirai-dataset-telegram-common", editable = "packages/dataset-telegram-common" },
@@ -1518,7 +1518,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "pandas", specifier = "==2.3.2" },
-    { name = "pandas-stubs", specifier = "==2.3.2.250827" },
+    { name = "pandas-stubs", specifier = "==2.3.3.260113" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "spamirai-dataset-common", editable = "packages/dataset-common" },
     { name = "torch", specifier = "==2.9.0", index = "https://download.pytorch.org/whl/cpu" },
