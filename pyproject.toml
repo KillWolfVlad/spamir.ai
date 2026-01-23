@@ -26,7 +26,7 @@ spamirai-dataset-validate = { workspace = true }
 [dependency-groups]
 dev = [
     "pytest==8.4.2",
-    "ruff==0.14.0",
+    "ruff==0.14.14",
     # These are added as dev dependencies becuase they should be available
     # when developing the project.
     "spamirai-api",
