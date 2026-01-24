@@ -2,8 +2,10 @@ version = 1
 revision = 3
 requires-python = ">=3.13"
 resolution-markers = [
-    "sys_platform != 'darwin'",
-    "sys_platform == 'darwin'",
+    "python_full_version >= '3.14' and sys_platform != 'darwin'",
+    "python_full_version < '3.14' and sys_platform != 'darwin'",
+    "python_full_version >= '3.14' and sys_platform == 'darwin'",
+    "python_full_version < '3.14' and sys_platform == 'darwin'",
 ]
 
 [manifest]
@@ -956,14 +958,15 @@ wheels = [
 
 [[package]]
 name = "python-telegram-bot"
-version = "22.4"
+version = "22.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+    { name = "httpcore", marker = "python_full_version >= '3.14'" },
     { name = "httpx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/05/e6/8e855e18627b7e256a57727344dd5479be0ec25e002233276b8bba7db4da/python_telegram_bot-22.4.tar.gz", hash = "sha256:ca332925a5ef3815dfba9dac12382232b840c2f57e2c1e660b1a31b5cb7341fe", size = 1482797, upload-time = "2025-09-13T15:16:21.374Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cd/9b/8df90c85404166a6631e857027866263adb27440d8af1dbeffbdc4f0166c/python_telegram_bot-22.6.tar.gz", hash = "sha256:50ae8cc10f8dff01445628687951020721f37956966b92a91df4c1bf2d113742", size = 1503761, upload-time = "2026-01-24T13:57:00.269Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/63/76/f38c7db5a55a176d5e194ad36ba000b6da7d15363f31cb93fa41542bd554/python_telegram_bot-22.4-py3-none-any.whl", hash = "sha256:5f73d6501fbe9118424dd04213311efec1b442e81a4900f8816102601c83685c", size = 729394, upload-time = "2025-09-13T15:16:18.813Z" },
+    { url = "https://files.pythonhosted.org/packages/13/97/7298f0e1afe3a1ae52ff4c5af5087ed4de319ea73eb3b5c8c4dd4e76e708/python_telegram_bot-22.6-py3-none-any.whl", hash = "sha256:e598fe171c3dde2dfd0f001619ee9110eece66761a677b34719fb18934935ce0", size = 737267, upload-time = "2026-01-24T13:56:58.06Z" },
 ]
 
 [[package]]
@@ -1492,7 +1495,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "python-dotenv", specifier = "==1.1.1" },
-    { name = "python-telegram-bot", specifier = "==22.4" },
+    { name = "python-telegram-bot", specifier = "==22.6" },
     { name = "spamirai-dataset-common", editable = "packages/dataset-common" },
 ]
 
@@ -1579,7 +1582,8 @@ name = "torch"
 version = "2.9.0"
 source = { registry = "https://download.pytorch.org/whl/cpu" }
 resolution-markers = [
-    "sys_platform == 'darwin'",
+    "python_full_version >= '3.14' and sys_platform == 'darwin'",
+    "python_full_version < '3.14' and sys_platform == 'darwin'",
 ]
 dependencies = [
     { name = "filelock", marker = "sys_platform == 'darwin'" },
@@ -1602,7 +1606,8 @@ name = "torch"
 version = "2.9.0+cpu"
 source = { registry = "https://download.pytorch.org/whl/cpu" }
 resolution-markers = [
-    "sys_platform != 'darwin'",
+    "python_full_version >= '3.14' and sys_platform != 'darwin'",
+    "python_full_version < '3.14' and sys_platform != 'darwin'",
 ]
 dependencies = [
     { name = "filelock", marker = "sys_platform != 'darwin'" },
