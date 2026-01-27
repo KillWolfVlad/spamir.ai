@@ -9,7 +9,7 @@ FROM ${BUILDER_IMAGE} AS builder
 
 WORKDIR /api
 
-COPY --from=ghcr.io/astral-sh/uv:0.8.17 /uv /uvx /bin/
+COPY --from=ghcr.io/astral-sh/uv:0.9.27 /uv /uvx /bin/
 COPY ./ ./
 
 RUN cd ./packages/api && \
