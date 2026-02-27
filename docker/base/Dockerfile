@@ -1,7 +1,7 @@
 ################################################################################
 
-ARG BUILDER_IMAGE=python:3.13.7-slim-trixie
-ARG RUNTIME_IMAGE=python:3.13.7-slim-trixie
+ARG BUILDER_IMAGE=python:3.14.2-slim-trixie
+ARG RUNTIME_IMAGE=python:3.14.2-slim-trixie
 
 ################################################################################
 
